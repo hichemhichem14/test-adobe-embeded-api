@@ -16,9 +16,9 @@ class ViewSDKClient {
     }
     previewFile(divId, viewerConfig, url) {
     const config = {
-    clientId: "fc9d0f9671774fb2a0f500dd5f4d0f73" //Enter your Client ID here
+    clientId: "fc9d0f9671774fb2a0f500dd5f4d0f73" //this is my api key
     
-    //clientId: "8c0cd670273d451cbc9b351b11d22318" //Enter your Client ID here
+    
     };
     if (divId) {
     config.divId = divId;
@@ -42,7 +42,7 @@ class ViewSDKClient {
     }
     previewFileUsingFilePromise(divId, filePromise, fileName) {
     this.adobeDCView = new window.AdobeDC.View({
-    clientId: "fc9d0f9671774fb2a0f500dd5f4d0f73", //Enter your Client ID here
+    clientId: "fc9d0f9671774fb2a0f500dd5f4d0f73", //this is my api key
     divId
     });
     this.adobeDCView.previewFile(
