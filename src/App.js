@@ -6,9 +6,9 @@ import React, { Component } from "react";
 class App extends Component {
   constructor( props ){
       super( props );
-      this.gotopage10 = this.gotopage10.bind(this);
+      this.gotopage = this.gotopage.bind(this);
     }
-     gotopage10=(page)=>{
+     gotopage=(page)=>{
       //console.log(page)    
       //const viewSDKClient = new ViewSDKClient();
      if(this.viewSDKClient)
@@ -32,8 +32,8 @@ class App extends Component {
       <div className="container">
         
          <div  className="layout"> <ul>
-          <li><button onClick={(event)=>this.gotopage10(5)}>go to page number 5</button></li>
-          <li><button onClick={(event)=>this.gotopage10(200)}>go to page number 200</button></li>
+          <li><button onClick={(event)=>this.gotopage(5)}>go to page number 5</button></li>
+          <li><button onClick={(event)=>this.gotopage(200)}>go to page number 200</button></li>
         </ul></div>
          
        <div id="pdf-div" className="full-window-div"/></div> );
