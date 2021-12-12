@@ -57,40 +57,7 @@ class ViewSDKClient {
     {}
     );
     }
-    registerSaveApiHandler() {
-    const saveApiHandler = (metaData, content, options) => {
-    console.log(metaData, content, options);
-    return new Promise((resolve) => {
-    setTimeout(() => {
-    const response = {
-    code: window.AdobeDC.View.Enum.ApiResponseCode.SUCCESS,
-    data: {
-    metaData: Object.assign(metaData, {
-    updatedAt: new Date().getTime()
-    })
-    }
-    };
-    resolve(response);
-    }, 2000);
-    });
-    };
-    this.adobeDCView.registerCallback(
-    window.AdobeDC.View.Enum.CallbackType.SAVE_API,
-    saveApiHandler,
-    {}
-    );
-    }
-    registerEventsHandler() {
-    this.adobeDCView.registerCallback(
-    window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
-    (event) => {
-    console.log(event);
-    },
-    {
-    enablePDFAnalytics: true
-    }
-    );
-    }
+    
     gotopage(previewFilePromise,page){
         previewFilePromise.then(adobeViewer => {
 
@@ -101,16 +68,7 @@ class ViewSDKClient {
              });
     });
     }
-    gotopagev2(previewFilePromise,page){
-        previewFilePromise.then(adobeViewer => {
-
-            adobeViewer.getAPIs().then(apis => {
-                    apis.gotoLocation(page)
-                            .then(() => console.log("Success"))
-                            .catch(error => console.log(error));
-             });
-    });
-    }
+    
    }
    export default ViewSDKClient;
 
